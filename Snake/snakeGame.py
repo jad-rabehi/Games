@@ -185,12 +185,21 @@ def message_box(subject, content):
     root.attributes("-topmost", True)
     root.withdraw()
 
-    
+    MsgBox = tk.messagebox.askquestion (subject,content)  # ,icon = 'warning'
+    if MsgBox == 'no':
+       root.destroy()
+       game_quit()
+    else:
+        #tk.messagebox.showinfo('Return','You will now return to play')   
+        pass
+
+    '''
     messagebox.showinfo(subject, content)
     try:
         root.destroy()        
     except:
         pass
+    '''
     
 
 
